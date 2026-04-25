@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Bulk Material Creator"
+config/name="Texture to Material"
 config/description="Right-click textures in the FileSystem to instantly create StandardMaterial3D resources for each. Perfect for large asset packs."
 config/features=PackedStringArray("4.6", "Forward Plus")
 

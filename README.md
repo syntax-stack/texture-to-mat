@@ -10,5 +10,5 @@ Convert multiple textures into materials instantly.
 ## Usage Guide
 1. Select your textures in the FileSystem.
 2. Ensure your textures are set to the **3D Texture** preset in the **Import** tab.
-3. Right click the selected textures.
+3. Go to Project -> Tools -> Create Materials from Textures.
 4. Click **Create Materials from Textures**.

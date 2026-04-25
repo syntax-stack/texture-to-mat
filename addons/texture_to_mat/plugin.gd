@@ -1,7 +1,6 @@
 @tool
 extends EditorPlugin
 
-
 func _enable_plugin() -> void:
 	# Add autoloads here.
 	pass
@@ -13,13 +12,20 @@ func _disable_plugin() -> void:
 
 
 func _enter_tree() -> void:
-	# Initialization of the plugin goes here.
-	pass
-
+	add_tool_menu_item("Create Materials from Textures", _on_menu_item_pressed)
 
 func _exit_tree() -> void:
-	# Clean-up of the plugin goes here.
-	pass
+	remove_tool_menu_item("Create Materials from Textures")
+
+func _on_menu_item_pressed() -> void:
+	var interface = get_editor_interface()
+	var selected_paths = interface.get_selected_paths()
+	
+	if selected_paths.is_empty():
+		print("Texture2Mat: No files selected.")
+		return
+	
+	_generate_materials_from_paths(selected_paths)
 
 func _generate_materials_from_paths(paths: PackedStringArray):
 	var interface = get_editor_interface()
